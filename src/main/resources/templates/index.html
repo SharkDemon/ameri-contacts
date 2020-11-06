@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AmeriContacts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <main role="main" class="container">
+        <div class="jumbotron">
+            <h1>AmeriContacts</h1>
+            <p class="lead">Welcome to AmeriContacts - an application designed to simply manage a list of contacts.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+		        <h5 class="card-title">Contacts List</h5>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Email Address</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="c : ${contacts}">
+                                <td th:text="${c.lastName}">Last Name</td>
+                                <td th:text="${c.firstName}">First Name</td>
+                                <td th:text="${c.email}">Email Address</td>
+                                <td>
+                                    <a th:href="@{/editContact/} + ${c.id}" th:text="Edit"></a>
+                                    | <a th:href="@{/removeContact/} + ${c.id}" th:text="Remove"></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Add New Contact</h5>
+	            <form action="#" th:action="@{/addContact}" th:object="${newContact}" method="post">
+	                <div class="row">
+	                    <div class="col">
+	                        <input type="text" th:field="*{firstName}" class="form-control" placeholder="Enter first name">
+	                    </div>
+	                    <div class="col">
+	                        <input type="text" th:field="*{lastName}" class="form-control" placeholder="Enter last name">
+	                    </div>
+	                    <div class="col">
+	                        <input type="text" th:field="*{email}" class="form-control" placeholder="Enter email">
+	                    </div>
+	                    <div class="col">
+	                        <button type="submit" class="btn btn-primary">Submit</button>
+	                    </div>
+	                </div>
+	            </form>
+            </div>
+        </div>
+
+    </main>
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted">AmeriContacts ©2020 by Rory Dickinson.</span>
+        </div>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

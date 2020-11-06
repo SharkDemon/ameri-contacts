@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AmeriContacts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <main role="main" class="container">
+        <div class="jumbotron">
+            <h1>AmeriContacts Error Page</h1>
+            <p class="lead">Oops!</p>
+        </div>
+        <div>
+	        <table id="errorTable">
+	            <tr>
+	                <td>Date</td>
+	                <td th:text="${timestamp}"/>
+	            </tr>
+	            <tr>
+	                <td>Path</td>
+	                <td th:text="${path}"/>
+	            </tr>
+	            <tr>
+	                <td>Error</td>
+	                <td th:text="${error}"/>
+	            </tr>
+	            <tr>
+	                <td>Status</td>
+	                <td th:text="${status}"/>
+	            </tr>
+	            <tr>
+	                <td>Message</td>
+	                <td th:text="${message}"/>
+	            </tr>
+	            <tr>
+	                <td>Exception</td>
+	                <td th:text="${exception}"/>
+	            </tr>
+	            <tr>
+	                <td>Trace</td>
+	                <td>
+	                    <pre th:text="${trace}"/>
+	                </td>
+	            </tr>
+	        </table>
+        </div>
+    </main>
+</body>
+</html>
