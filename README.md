@@ -17,5 +17,5 @@ request of AmeriSave Mortgage Corporation.
 
 ## Screenshots
 
-[Index Page](images/ameri-contacts-01.png)
-[Edit Page](images/ameri-contacts-02.png)
+![Index Page](images/ameri-contacts-01.png)
+![Edit Page](images/ameri-contacts-02.png)
